@@ -21,7 +21,8 @@ public class SwaggerConfig {
     @Bean
     public Docket docket(Environment environment){
 
-        Profiles profiles = Profiles.of("dev", "pp");
+        //我们有这样一个需求：希望Swagger在开发环境中，在正式环境时不能使用
+        Profiles profiles = Profiles.of("dev");
         boolean flag = environment.acceptsProfiles(profiles);
         System.out.println(flag);
 
@@ -53,11 +54,11 @@ public class SwaggerConfig {
     public ApiInfo apiInfo(){
         return new ApiInfo(
                 "柯柯的大爹",
-                "很多撒比",
+                "很多小可爱",
                 "v1.1",
                 "https://www.cnblogs.com/qqkkOvO/",
-                new Contact("大王", "https://www.cnblogs.com/qqkkOvO/", "446783737@qq.com"),
-                "Apache9.9",
+                new Contact("大王叫我来巡山", "https://www.cnblogs.com/qqkkOvO/", "446783737@qq.com"),
+                "Apache2.0",
                 "http://www.apache.org/licenses/LICENSE-2.0",
                 new ArrayList<>()
         );
