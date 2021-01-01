@@ -11,7 +11,7 @@ import java.util.Date;
 
 @RestController
 @RequestMapping("/hhh")
-@Api("123")
+@Api(tags="哈喽控制类")
 public class HelloController {
 
   /** 写一个hello测试工程 */
